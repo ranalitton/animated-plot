@@ -1,4 +1,4 @@
-# install.packages("gganimate")
+# install all required packages 
 library(gganimate)
 library(ggplot2)
 library(dplyr)
@@ -7,7 +7,7 @@ library(ggthemes)
 library(gifski)
 library(tidyverse)
 library(Rcpp)
-#install.packages("Rcpp")
+
 gapminder
 graph1 = gapminder %>%
    ggplot(aes(x=gdpPercap, y=lifeExp, color=continent, size=pop)) +
@@ -30,6 +30,6 @@ graph1.animation = graph1 +
    labs(subtitle = "Year: {frame_time}") +
    shadow_wake(wake_length = 0.1)
 
-animate(graph1.animation, height = 500, width = 800, fps = 30, duration = 10,
+animate(graph1.animation, height = 500, width = 800, fps = 30, duration = 10,  #animation outline
         end_pause = 60, res = 100)
-anim_save("gapminder graph.gif")
+anim_save("gapminder graph.gif") #for saving the gif file
